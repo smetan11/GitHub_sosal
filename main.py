@@ -1,7 +1,8 @@
 import asyncio
 import logging
 import sys
-
+import os
+from dotenv import load_dotenv
 from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters.command import Command
 import random
@@ -12,8 +13,9 @@ from aiogram.fsm.storage.memory import MemoryStorage
 
 from states import carapys
 
+load_dotenv()
 
-bot = Bot(token="7763148917:AAEM-BDLxATH14zZZIR8So_kr5iMjcH3N4E")
+bot = Bot(token=os.getenv('token'))
 dp = Dispatcher(storage=MemoryStorage())
 
 
